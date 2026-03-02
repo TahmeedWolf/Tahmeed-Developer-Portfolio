@@ -122,7 +122,7 @@ export const Hero = () => {
               </Button>
 
               <AnimatedBorderButton
-                href="/src/data/TahmeedRahman_CV_Resume.pdf"
+                href="/data/TahmeedRahman_CV_Resume.pdf"
                 download="TahmeedRahman_Resume.pdf"
               >
                 <Download className="w-5 h-5" />
