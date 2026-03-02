@@ -7,14 +7,14 @@ const testimonials = [
       "Tahmeed is a diligent engineer and pragmatic problem-solver who combines strong technical skills with a clear focus on measurable business impact. I am confident he will be an asset to any team working in software engineering, data engineering, machine learning, or AI product development.",
     author: "Debashis Roy",
     role: "Head of IT, ASA Bangladesh",
-    avatar: "/public/projects/asa_circlecrop.png",
+    avatar: "/projects/asa_circlecrop.png",
   },
   {
     quote:
       "Working with Tahmeed was a game-changer for our project. He delivered ahead of schedule with code quality that set a new standard for our team.",
     author: "Prof. Kajari Sur",
     role: "Department of IT, IEM Kolkata",
-    avatar: "/public/projects/iem_rounded.png",
+    avatar: "/projects/iem_rounded.png",
   },
   {
     quote:
@@ -29,7 +29,7 @@ const testimonials = [
       "I have known Tahmeed very well for around four years. He is honest, dedicated and focused on what he does. He is a patient listener and possesses good moral character. He possesses wonderful leadership skills. His communication skills are quite commendable. He also maintained a good academic record in his department.",
     author: "Prof. Dr. Arun Kumar Bar",
     role: "Principal,IEM Kolkata",
-    avatar: "/public/projects/iem_rounded.png",
+    avatar: "/projects/iem_rounded.png",
   },
   {
     quote:
