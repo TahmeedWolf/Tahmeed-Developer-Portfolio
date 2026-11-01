@@ -45,11 +45,11 @@
 <!-- ABOUT ME -->
 ## About Me
 
-I'm Tahmeed Rahman — a passionate full-stack engineer who turns complex challenges into elegant, intelligent solutions.
+I'm Tahmeed Rahman, a full-stack engineer who turns complex challenges into elegant, intelligent solutions.
 
-What excites me most is the moment when technology stops being just code and starts genuinely helping people — whether it's answering loan questions in seconds for microfinance users, predicting financial balances to guide better decisions, or creating assistants that feel almost human.
+What excites me most is the moment when technology stops being just code and starts genuinely helping people, whether that is answering loan questions in seconds for microfinance users, predicting financial balances to guide better decisions, or creating assistants that feel almost human.
 
-My journey has taken me from hospital internships to leading AI projects in microfinance and beyond — across Bangladesh, Malaysia, and more. Right now I'm open to **full-time and contract opportunities** (remote or on-site) where I can bring AI, full-stack engineering, and cross-domain problem-solving to create real impact.
+My journey has taken me from hospital internships to leading AI projects in microfinance and beyond, across Bangladesh, Malaysia and more. Right now I'm open to **full-time and contract opportunities** (remote or on-site) where I can bring AI, full-stack engineering, and cross-domain problem-solving to create real impact.
 
 <!-- TECH STACK -->
 ## Tech Stack
@@ -122,19 +122,19 @@ Products published under my own developer accounts, in use by real people today.
 | [Habitlee: Habit Tracker](https://play.google.com/store/apps/details?id=com.habitlee.habittracker) | Google Play | Live · v1.0.3 |
 | [Word & Character Counter](https://chromewebstore.google.com/detail/dkfdbfmpiofdeaoohkgmeafnafnfdigi) | Chrome Web Store | Live · v1.0.0 |
 | [Volume Booster + EQ](https://chromewebstore.google.com/detail/gaahlagepjkognidigdnlninglimaoii) | Chrome Web Store | Live · v1.0.0 |
-| [Link Copier — URL as Text or Markdown](https://chromewebstore.google.com/detail/eaplfblkakcnfpkdlfoaiigbehamclgm) | Chrome Web Store | Live · v1.0.0 |
+| [Link Copier: URL as Text or Markdown](https://chromewebstore.google.com/detail/eaplfblkakcnfpkdlfoaiigbehamclgm) | Chrome Web Store | Live · v1.0.0 |
 
 <br />
 
 <!-- TEMPLATES -->
 ## Premium Website Templates (live)
 
-- [TR Dev Studio](https://tr-dev-studio.vercel.app/) — template storefront
-- [Hora XII](https://hora-xii-premium-template.vercel.app/) — luxury watch brand
-- [Lumina](https://tahmeedwolf.github.io/Lumina-template/) — studio presentation template (zero dependencies)
-- [Zeya](https://zeya-premium-beauty-product-website.vercel.app/) — beauty & skincare
-- [Kava](https://kava-speciality-coffee-website-temp.vercel.app/) — speciality coffee
-- [ProjectDoc](https://project-doc-swart.vercel.app/) — deliverables studio
+- [TR Dev Studio](https://tr-dev-studio.vercel.app/): my e-commerce store for digital products
+- [Hora XII](https://hora-xii-premium-template.vercel.app/): luxury watch brand
+- [Lumina](https://tahmeedwolf.github.io/Lumina-template/): studio presentation template, zero dependencies
+- [Zeya](https://zeya-premium-beauty-product-website.vercel.app/): beauty and skincare
+- [Kava](https://kava-speciality-coffee-website-temp.vercel.app/): speciality coffee
+- [ProjectDoc](https://project-doc-swart.vercel.app/): deliverables studio
 
 <br />
 
@@ -144,27 +144,27 @@ Products published under my own developer accounts, in use by real people today.
 ### Personalized Healthcare Management System
 Chronic disease platform integrating EHRs, CGM data, and user uploads with AI insights and Knowledge Graph analysis.
 
-**Tech** — Flask • Python • Neo4j • OpenAI • SQLAlchemy • Pandas
+**Tech:** Python • Flask • MySQL • AWS • Knowledge Graph • NLG • JavaScript
 
 ### ASA AI Agent
-Natural-language interface for microfinance queries — converts plain English to optimized SQL with semantic caching.
+Natural-language interface for microfinance queries, converting plain English into optimised SQL with semantic caching.
 
-**Tech** — Python • Flask • PostgreSQL • NLP • NL-to-SQL
+**Tech:** Python • Ollama • LLM • Flask • Jinja • SQL Server • NL-to-SQL
 
 ### ASA Prediction System
 Hybrid forecasting pipeline (SARIMA + XGBoost) for monthly financial balances with automated SQL ingestion and visualization.
 
-**Tech** — Python • SARIMA • XGBoost • SQLAlchemy • Pandas • Statsmodels
+**Tech:** Python • SARIMA • XGBoost • Statsmodels • Pandas • NumPy • SQL Server
 
 ### JARVIS – Voice Assistant
 Voice-activated assistant using speech recognition and synthesis for tasks and real-time information.
 
-**Tech** — JavaScript • Web Speech API • HTML/CSS
+**Tech:** JavaScript • Web Speech API • HTML/CSS
 
 ### CodeFlow
 Responsive AI-powered website providing development solutions and tools.
 
-**Tech** — React • JavaScript • Tailwind CSS
+**Tech:** React • JavaScript • Tailwind CSS
 
 → [See all repositories →](https://github.com/TahmeedWolf?tab=repositories)
 
