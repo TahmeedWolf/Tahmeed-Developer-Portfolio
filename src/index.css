@@ -1,0 +1,291 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #0f1418;
+  --color-foreground: #f0f2f5;
+
+  --color-card: #141a1f;
+
+  --color-primary: #20b2a6;
+  --color-primary-foreground: #ffffff;
+
+  --color-secondary: #1f2830;
+  --color-secondary-foreground: #20b2a6;
+
+  --color-muted: #252e37;
+  --color-muted-foreground: #7a8491;
+
+  --color-border: #242b32;
+
+  --radius: 0.75rem;
+
+  --color-highlight: #f5a623;
+  --color-surface: #1a2329;
+}
+
+/* ───────────────────────────────────────────────
+   BASE STYLES
+   ─────────────────────────────────────────────── */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground min-h-screen;
+    font-family: "Inter", system-ui, -apple-system, sans-serif;
+  }
+
+  button,
+  [role="button"] {
+    cursor: pointer;
+  }
+
+  .font-serif {
+    font-family: "Playfair Display", Georgia, serif;
+  }
+
+  /* Prevent text selection on interactive elements */
+  .select-none {
+    user-select: none;
+  }
+}
+
+/* ───────────────────────────────────────────────
+   COMPONENTS
+   ─────────────────────────────────────────────── */
+@layer components {
+  .glass {
+    background-color: color-mix(in srgb, var(--color-surface) 40%, transparent);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid color-mix(in srgb, var(--color-border) 40%, transparent);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Pills that sit over an image: solid, so they never depend on a
+     backdrop filter being re-rasterised correctly during zoom. */
+  .badge-solid {
+    background-color: rgba(12, 17, 21, 0.82);
+    border: 1px solid color-mix(in srgb, var(--color-border) 70%, transparent);
+  }
+
+  .card-surface {
+    background-color: color-mix(in srgb, var(--color-surface) 62%, var(--color-background));
+    border: 1px solid color-mix(in srgb, var(--color-border) 70%, transparent);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.18);
+  }
+
+  .glass-strong {
+    background-color: color-mix(in srgb, var(--color-surface) 75%, transparent);
+    backdrop-filter: blur(24px) saturate(200%);
+    -webkit-backdrop-filter: blur(24px) saturate(200%);
+    border: 1px solid color-mix(in srgb, var(--color-border) 60%, transparent);
+  }
+
+  .glow-text {
+    text-shadow: 
+      0 0 10px color-mix(in srgb, var(--color-primary) 40%, transparent),
+      0 0 20px color-mix(in srgb, var(--color-primary) 30%, transparent);
+  }
+
+  .glow-border {
+    box-shadow: 
+      0 0 15px color-mix(in srgb, var(--color-primary) 25%, transparent),
+      inset 0 0 10px color-mix(in srgb, var(--color-primary) 15%, transparent);
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-xl hover:shadow-primary/20 hover:-translate-y-1;
+    position: relative;
+  }
+
+  /* A light sweeps across the card edge on hover */
+  .card-hover::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    opacity: 0;
+    background: linear-gradient(
+      115deg,
+      transparent 35%,
+      color-mix(in srgb, var(--color-primary) 16%, transparent) 50%,
+      transparent 65%
+    );
+    background-size: 250% 100%;
+    background-position: 120% 0;
+    transition: opacity 0.4s ease;
+  }
+
+  .card-hover:hover::after {
+    opacity: 1;
+    animation: card-sweep 0.9s ease-out forwards;
+  }
+
+  @keyframes card-sweep {
+    from { background-position: 120% 0; }
+    to   { background-position: -40% 0; }
+  }
+
+  /* Scroll reveal — see src/hooks/useReveal.js */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+      opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ───────────────────────────────────────────────
+   REDUCED MOTION
+   ─────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ───────────────────────────────────────────────
+   ANIMATIONS & KEYFRAMES
+   ─────────────────────────────────────────────── */
+@layer utilities {
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+      filter: blur(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-12px); }
+  }
+
+  @keyframes slow-drift {
+    0%   { transform: translate(0, 0) rotate(0deg); }
+    25%  { transform: translate(25px, -35px) rotate(45deg); }
+    50%  { transform: translate(-20px, 30px) rotate(90deg); }
+    75%  { transform: translate(35px, -15px) rotate(135deg); }
+    100% { transform: translate(0, 0) rotate(180deg); }
+  }
+
+  @keyframes marquee {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .animate-float {
+    animation: float 5s ease-in-out infinite;
+  }
+
+  .animate-slow-drift {
+    animation: slow-drift var(--duration, 35s) ease-in-out infinite;
+  }
+
+  .animate-marquee {
+    animation: marquee 40s linear infinite;
+  }
+
+  /* Animation delays */
+  .animation-delay-100  { animation-delay: 100ms; }
+  .animation-delay-200  { animation-delay: 200ms; }
+  .animation-delay-300  { animation-delay: 300ms; }
+  .animation-delay-400  { animation-delay: 400ms; }
+  .animation-delay-500  { animation-delay: 500ms; }
+  .animation-delay-600  { animation-delay: 600ms; }
+  .animation-delay-800  { animation-delay: 800ms; }
+  .animation-delay-1000 { animation-delay: 1000ms; }
+
+  /* Animated Border (for AnimatedBorderButton) */
+  @keyframes animated-border {
+    0%   { stroke-dashoffset: 400; }
+    100% { stroke-dashoffset: -550; }
+  }
+
+  .group:hover .animated-border-path {
+    animation: animated-border 2s linear infinite;
+  }
+
+  .animated-border:hover {
+    background-color: color-mix(in srgb, var(--color-primary) 12%, transparent);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 0 25px color-mix(in srgb, var(--color-primary) 25%, transparent);
+  }
+
+  /* Card action buttons (open site / view source).
+     Written out rather than composed from utility variants so the behaviour is
+     unambiguous: visible while the card is hovered, or while a link inside
+     holds focus so keyboard users can reach it. The sticky-after-click case is
+     handled in Projects.jsx, which blurs the link and suppresses the card
+     until the pointer re-enters. */
+  .card-actions {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+
+  .group:hover .card-actions,
+  .card-actions:focus-within {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Set by the card after one of its links is clicked, because the new tab
+     steals focus and the frozen :hover would otherwise keep these visible. */
+  .card-actions-off {
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+
+  /* Touch screens have no hover, so keep the actions reachable there. */
+  @media (hover: none) {
+    .card-actions {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+
+  /* Reading-progress bar in the navbar */
+  .scroll-progress {
+    transform-origin: left center;
+    transition: transform 120ms linear;
+  }
+
+  /* Timeline glow (used in Experience) */
+  .timeline-glow {
+    box-shadow: 
+      0 0 30px color-mix(in srgb, var(--color-primary) 40%, transparent),
+      0 0 60px color-mix(in srgb, var(--color-primary) 30%, transparent);
+  }
+}
